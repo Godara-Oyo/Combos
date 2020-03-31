@@ -1,0 +1,26 @@
+language: python
+python:
+- 3.4
+- 2.7
+
+addons:
+  sonarcloud:
+    organization: "Godara-Oyo"
+
+env:
+  - QA
+  - PROD
+dist: trusty
+script:
+   - mkdir ShortStory
+   - touch KKK
+   - echo 5
+   - sonar-scanner -Dsonar.projectKey=Godara-Oyo_Combos
+
+matrix:
+  fast_finish: true
+  allow_failiures:
+  - python 2.7
+  exclude:
+  - python: 3.4
+    env: QA
